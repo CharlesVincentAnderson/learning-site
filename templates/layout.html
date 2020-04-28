@@ -4,11 +4,15 @@
 <html>
     <head>
 	<title>{% block title %}{% endblock %}</title>
-	<link rel="stylesheet" href={% static 'css/layouts.css' %}>
+	<link rel="stylesheet" href="{% static 'css/layout.css' %}">
     </head>
     <body>
 	<div class="site_container">
-	{% block content %}{% endblock %}
+	    <nav>
+	        <a href="{% url 'hello' %}">Home</a>
+	        <a href="{% url 'courses:list' %}">Courses</a>
+	    </nav>
+	    {% block content %}{% endblock %}
     	</div>
     </body>
 </html>
